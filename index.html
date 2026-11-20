@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://firestore.googleapis.com https://*.firebaseio.com https://identitytoolkit.googleapis.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Vértice Private Estates — Imóveis de Alto Padrão, Coberturas, Condomínios & Consultoria Patrimonial</title>
+  <meta name="description" content="Vértice Private Estates em Florianópolis, SC. Explore imóveis verificados, compare a rentabilidade patrimonial e agende sua visita privada com sincronização em tempo real no Firebase.">
+  <meta name="theme-color" content="#08100E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Vértice Private Estates",
+    "description": "Imóveis de Alto Padrão, Coberturas, Condomínios & Consultoria Patrimonial",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Florianópolis, SC",
+      "addressCountry": "BR"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <span class="brand-badge">#05</span>
+        <div>
+          <strong class="brand-name">Vértice Private Estates</strong>
+          <span class="brand-city">Florianópolis, SC • TLS 1.3 Firestore Wire Protocol &amp; LGPD</span>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Menu principal">
+        <a href="#servicos">Catálogo &amp; Serviços</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#agendamento">Operação</a>
+        <a href="#painel-firebase" class="nav-pill-live">
+          <span class="pulse-dot"></span> Monitor Real-Time
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">🏢 CURADORIA IMOBILIÁRIA & CRM AO VIVO • FIREBASE CLOUD</span>
+          <h1 class="hero-title">Imóveis Selecionados com Simulação Financeira e Visita Guiada.</h1>
+          <p class="hero-sub">Explore imóveis verificados, compare a rentabilidade patrimonial e agende sua visita privada com sincronização em tempo real no Firebase.</p>
+          <div class="hero-actions">
+            <a href="#agendamento" class="btn-primary">Agendar Visita Privada ➔</a>
+            <a href="#servicos" class="btn-secondary">Explorar Carteira de Imóveis</a>
+          </div>
+          <div class="kpi-strip" role="region" aria-label="Indicadores de performance e segurança">
+            <div class="kpi-card">
+              <strong id="kpi-total-registros">3</strong>
+              <span>Registros Assinados</span>
+            </div>
+            <div class="kpi-card">
+              <strong id="kpi-receita-estimada">R$ 0,00</strong>
+              <span>Volume Operacional</span>
+            </div>
+            <div class="kpi-card">
+              <strong>TLS 1.3 + CSP</strong>
+              <span>Zero-Trust Firebase</span>
+            </div>
+            <div class="kpi-card">
+              <strong>20/20 PASS</strong>
+              <span>Suíte Automatizada</span>
+            </div>
+          </div>
+        </div>
+
+        <aside id="simulador" class="calculator-card" aria-labelledby="calc-heading">
+          <div class="card-header-row">
+            <span class="status-tag">⚡ CÁLCULO DETERMINÍSTICO</span>
+            <span class="mono-tag">collection: visitas_imobiliaria</span>
+          </div>
+          <h2 id="calc-heading" class="card-title">Simulador de Investimento & Parcelamento Imobiliário</h2>
+          <p class="card-desc">Selecione os itens desejados para simular o orçamento exato em centavos inteiros (livre de erro de ponto flutuante IEEE-754).</p>
+
+          <div id="calc-items-list" class="calc-items-list" role="group" aria-label="Itens para simulação"></div>
+
+          <div class="calc-summary">
+            <div>
+              <span class="calc-total-label">Total Estimado (<span id="calc-count">0</span> selecionados)</span>
+              <strong id="calc-total-value" class="calc-total-value">R$ 0,00</strong>
+            </div>
+            <button type="button" id="btn-apply-sim" class="btn-primary btn-sm">Carregar no Formulário ➔</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicos" class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">CATÁLOGO INTERATIVO • ES2026</span>
+            <h2 class="section-title">Serviços &amp; Soluções Disponíveis</h2>
+          </div>
+          <div class="filter-controls">
+            <input type="search" id="search-services" class="search-input" maxlength="80" placeholder="Buscar serviço ou palavra-chave..." aria-label="Buscar serviço">
+            <div class="filter-chips" role="tablist">
+              <button type="button" class="filter-chip is-active" data-cat="Todos">Todos</button>
+              <button type="button" class="filter-chip" data-cat="Apartamentos">Apartamentos</button>
+              <button type="button" class="filter-chip" data-cat="Coberturas">Coberturas</button>
+              <button type="button" class="filter-chip" data-cat="Condomínios">Condomínios</button>
+              <button type="button" class="filter-chip" data-cat="Consultoria">Consultoria</button>
+              <button type="button" class="filter-chip" data-cat="Investimento">Investimento</button>
+              <button type="button" class="filter-chip" data-cat="Terrenos">Terrenos</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="services-grid" class="services-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="agendamento" class="section-block section-alt">
+      <div class="container workspace-grid">
+        <div class="form-panel">
+          <div class="card-header-row">
+            <span class="status-tag">🛡️ OWASP + LGPD + FIRESTORE TLS</span>
+            <span id="firebase-conn-badge" class="conn-badge">● Circuit Breaker: CLOSED (Ready)</span>
+          </div>
+          <h2 class="card-title">Agendar Visita / Solicitar Dossiê no Firebase</h2>
+          <p class="card-desc">Serialização oficial no protocolo Google Cloud Firestore v1 (<code>fields.stringValue</code>), validação anti-SSRF, assinatura FNV-1a 64-bit e mascaramento LGPD.</p>
+
+          <form id="firebase-form" class="tx-form" novalidate>
+            <div class="form-group">
+              <label for="input-cliente">Nome do Investidor / Comprador *</label>
+              <input type="text" id="input-cliente" required minlength="2" maxlength="120" placeholder="Ex: Dr. Henrique Valadares" autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="input-contato">Telefone / E-mail Corporativo *</label>
+              <input type="text" id="input-contato" required minlength="4" maxlength="120" placeholder="(48) 99912-4050">
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="select-profissional">Consultor Patrimonial</label>
+                <select id="select-profissional">
+                  <option value="Beatriz Albuquerque (CRECI-SC • Alto Padrão Beira-Mar)">Beatriz Albuquerque (CRECI-SC • Alto Padrão Beira-Mar)</option>
+                <option value="Gustavo Meirelles (CRECI-SC • Condomínios Fechados)">Gustavo Meirelles (CRECI-SC • Condomínios Fechados)</option>
+                <option value="Helena Bittencourt (CRECI-SC • Investimento & Renda)">Helena Bittencourt (CRECI-SC • Investimento & Renda)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="select-horario">Modalidade da Visita</label>
+                <select id="select-horario">
+                  <option value="Visita Presencial Exclusiva • Amanhã 10h">Visita Presencial Exclusiva • Amanhã 10h</option>
+                <option value="Visita Presencial Exclusiva • Amanhã 16h">Visita Presencial Exclusiva • Amanhã 16h</option>
+                <option value="Tour Virtual Ao Vivo por Vídeo • Hoje 18h">Tour Virtual Ao Vivo por Vídeo • Hoje 18h</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="select-servico">Serviço / Pacote Principal *</label>
+              <select id="select-servico">
+                <option value="s1" data-price="4850000.0">Cobertura Duplex Vista Mar — Beira-Mar Norte (380m² • 4 Suítes) — R$ 4.850.000,00</option>
+                <option value="s2" data-price="6200000.0">Casa Contemporânea em Condomínio — Jurerê Internacional (460m²) — R$ 6.200.000,00</option>
+                <option value="s3" data-price="2150000.0">Apartamento Garden Suspenso — Campeche Sul (195m² • 3 Suítes) — R$ 2.150.000,00</option>
+                <option value="s4" data-price="740000.0">Studio Boutique Rentabilidade Airbnb — Centro Executivo (48m²) — R$ 740.000,00</option>
+                <option value="s5" data-price="1890000.0">Lote Residencial Frente Lagoa — Condomínio Náutico (820m²) — R$ 1.890.000,00</option>
+                <option value="s6" data-price="3500.0">Avaliação Patrimonial & Estruturação Jurídica de Compra — R$ 3.500,00</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="input-obs">Observações Técnicas (Opcional)</label>
+              <input type="text" id="input-obs" maxlength="200" placeholder="Alguma preferência ou detalhe adicional?">
+            </div>
+
+            <div class="form-group">
+              <label class="calc-item-label" for="input-lgpd-consent">
+                <span class="calc-item-left">
+                  <input type="checkbox" id="input-lgpd-consent" checked required>
+                  <span>Consentimento LGPD (Lei 13.709/2018): autorizo o tratamento mínimo dos dados exclusivamente para este atendimento.</span>
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-primary btn-full">
+              Validar, Assinar &amp; Persistir no Firestore ➔
+            </button>
+          </form>
+        </div>
+
+        <div id="painel-firebase" class="table-panel">
+          <div class="table-panel-header">
+            <div>
+              <span class="section-eyebrow">AUDITORIA EM TEMPO REAL • PRIVACY-BY-DESIGN</span>
+              <h2 class="card-title">CRM de Visitas & Propostas em Tempo Real (Firebase)</h2>
+            </div>
+            <div class="table-actions">
+              <button type="button" id="btn-toggle-pii" class="btn-secondary btn-sm" aria-pressed="true">🔒 Mascarar PII (LGPD)</button>
+              <button type="button" id="btn-export-json" class="btn-secondary btn-sm">Exportar Firestore JSON</button>
+              <button type="button" id="btn-purge-lgpd" class="btn-secondary btn-sm" title="Art. 18 LGPD - Direito ao Esquecimento">Expurgar Dados</button>
+              <button type="button" id="btn-reset-demo" class="btn-secondary btn-sm">Restaurar Demo</button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="firebase-table" aria-label="CRM de Visitas & Propostas em Tempo Real (Firebase)">
+              <thead>
+                <tr>
+                  <th>Cliente &amp; Contato (LGPD)</th>
+                  <th>Serviço &amp; Responsável</th>
+                  <th>Janela / Horário</th>
+                  <th>Valor</th>
+                  <th>Status &amp; Assinatura</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="firebase-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast-banner" class="toast-banner" role="status" aria-live="polite" hidden></div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Vértice Private Estates</strong> • Engenharia de Software Sênior por <a href="https://github.com/nonscs813-a11y" target="_blank" rel="noopener noreferrer">Julio Cesar (@nonscs813-a11y)</a>
+        <p class="footer-sub">Arquitetura 100% Web Nativa • TLS 1.3 Firestore Wire Protocol • OWASP Top 10 • LGPD • 20 Testes Automatizados.</p>
+      </div>
+      <div class="footer-badges">
+        <span>HTML5 Semântico</span>
+        <span>CSS3 Design System</span>
+        <span>Firestore TLS 1.3</span>
+        <span>20/20 Enterprise Tests</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
