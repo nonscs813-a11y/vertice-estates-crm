@@ -14,10 +14,10 @@
   "use strict";
 
   const FIREBASE_CONFIG = Object.freeze({
-    projectId: "vertice-estates-crm",
+    projectId: "julio-enterprise-suite",
     collection: "visitas_imobiliaria",
     storageKey: "fb_enterprise_visitas_imobiliaria_v4",
-    apiEndpoint: "https://firestore.googleapis.com/v1/projects/vertice-estates-crm/databases/(default)/documents/visitas_imobiliaria",
+    apiEndpoint: "https://firestore.googleapis.com/v1/projects/julio-enterprise-suite/databases/(default)/documents/visitas_imobiliaria",
     timeoutMs: 4500
   });
 
